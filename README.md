@@ -8,13 +8,12 @@ First I want to thank [D3.js][2] developers for creating such an amazing data vi
 
 Things I used.
 
+<p>
 <img alt="d3js" src="https://img.shields.io/badge/-D3.js-F9A03C?logo=d3.js&logoColor=white&style=flat-square" />
-
- <img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=flat-square" />
-
+<img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=flat-square" />
 <img alt="Webpack" src="https://img.shields.io/badge/-Webpack-8DD6F9?logo=webpack&logoColor=white&style=flat-square" /> 
-
- <img alt="npm" src="https://img.shields.io/badge/-npm-CB3837?logo=npm&logoColor=white&style=flat-square" />
+<img alt="npm" src="https://img.shields.io/badge/-npm-CB3837?logo=npm&logoColor=white&style=flat-square" />
+</p>
 
 ## Example
 
