@@ -19,9 +19,6 @@ export class Gnet{
     canvasContext : CanvasRenderingContext2D;
 
     constructor(selector:string,options:GraphOptions){
-        console.log({options});
-        console.log(options.nodeStyle);
-        console.log(options.nodeStyle.color);
         this.selector = selector;
         this.width    = options.width;
         this.height   = options.height;

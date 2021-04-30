@@ -17,7 +17,7 @@ Things I used.
 
 ## Example
 
-A basic example on loading the network graph is shown below using **Gnet**.
+A basic example of loading the network graph is shown below using **Gnet**.
 
 #### index.html
 ``` html
@@ -64,7 +64,7 @@ function main(){
 main();
 
 ```
-that's, it simple right :sunglasses:
+that's it, simple right :sunglasses:
 
 
 ## Build
