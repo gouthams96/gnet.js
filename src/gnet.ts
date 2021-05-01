@@ -13,7 +13,7 @@ export class Gnet{
     links    : any[];
     nodeStyle : NodeStyle = {
         color  : 'red',
-        radius : 5,
+        radius : 3,
     };
 
     canvasContext : CanvasRenderingContext2D;
@@ -75,8 +75,14 @@ export class Gnet{
     }
 
     getCanvasContext(selector:string,width:number,height:number): CanvasRenderingContext2D{
-        const canvas =  select(selector).append('canvas').attr('width',width).attr('height',height);
-        const context:CanvasRenderingContext2D = canvas.node().getContext('2d');
+        const dpr:number = devicePixelRatio || 1;
+        const canvas:HTMLCanvasElement = document.createElement('canvas');
+        canvas.width = dpr * width;
+        canvas.height = dpr * height;
+        canvas.style.width = `${width}px`;
+        const context:CanvasRenderingContext2D = canvas.getContext('2d');
+        context.scale(dpr,dpr);
+        document.querySelector(selector).appendChild(canvas);
         return context;
     }
 }
