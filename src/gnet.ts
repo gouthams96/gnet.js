@@ -1,4 +1,4 @@
-import { GraphOptions, NodeStyle } from "./graph.config";
+import { GraphOptions, NodeStyle, LinkStyle } from "./graph.config";
 import { Node, Link } from "./graph.config";
 import { GraphData } from "./graph.config";
 import { select } from "d3-selection";
@@ -16,8 +16,12 @@ export class Gnet {
   nodes: any[];
   links: any[];
   nodeStyle: NodeStyle = {
-    color: "red",
+    color: "#48C9B0",
     radius: 3,
+    borderColor: "#fff",
+  };
+  linkStyle: LinkStyle = {
+    color: "#aaa",
   };
 
   canvasContext: CanvasRenderingContext2D;
@@ -26,8 +30,10 @@ export class Gnet {
     this.selector = selector;
     this.width = options.width;
     this.height = options.height;
-    this.nodeStyle.color = options.nodeStyle.color;
-    this.nodeStyle.radius = options.nodeStyle.radius;
+
+    this.nodeStyle = { ...this.nodeStyle, ...options.nodeStyle };
+    this.linkStyle = { ...this.linkStyle, ...options.linkStyle };
+
     this.init();
   }
 
@@ -59,9 +65,9 @@ export class Gnet {
     this.canvasContext.clearRect(0, 0, this.width, this.height);
     this.canvasContext.beginPath();
     this.links.forEach((d) => this.drawLink(d));
-    this.canvasContext.strokeStyle = "#aaa";
+    this.canvasContext.strokeStyle = this.linkStyle.color;
     this.canvasContext.stroke();
-    this.canvasContext.strokeStyle = "#fff";
+    this.canvasContext.strokeStyle = this.nodeStyle.borderColor;
     for (const node of this.nodes) {
       this.canvasContext.beginPath();
       this.drawNode(node);
@@ -77,7 +83,7 @@ export class Gnet {
   }
 
   drawNode(d: any) {
-    this.canvasContext.moveTo(d.x + 3, d.y);
+    this.canvasContext.moveTo(d.x + this.nodeStyle.radius, d.y);
     this.canvasContext.arc(d.x, d.y, this.nodeStyle.radius, 0, 2 * Math.PI);
   }
 
