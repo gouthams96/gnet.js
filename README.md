@@ -1,8 +1,10 @@
 # Gnet.js
 
+![Demo](https://media.giphy.com/media/mkEFX5z6a1tbFI5fjZ/giphy.gif)
+
 **Gnet** is a JavaScript library for network graph visualization, developed by [Goutham][1].
 
-First I want to thank [D3.js][2] developers for creating such an amazing data visualization library. **Gnet** is build on top of [D3.js][2] for graph visualization and interaction. Even though it's build on [D3.js][2] it's very lightweight javascript library compared to [D3.js][2]. Also, **Gnet** is making use [canvas][3] feature of [D3.js][2] instead of traditional [SVG][4].  The **big advantage of canvas over** SVG is that you can create thousands of separate elements without it really affecting the performance.
+First I want to thank [D3.js][2] developers for creating such an amazing data visualization library. **Gnet** is build on top of [D3.js][2] for graph visualization and interaction. Even though it's build on [D3.js][2] it's very lightweight javascript library compared to [D3.js][2]. Also, **Gnet** is making use [canvas][3] feature of [D3.js][2] instead of traditional [SVG][4]. The **big advantage of canvas over** SVG is that you can create thousands of separate elements without it really affecting the performance.
 
 **This project is beta so I'm not recommending for production use.**
 
@@ -20,23 +22,26 @@ Things I used.
 A basic example of loading the network graph is shown below using **Gnet**.
 
 #### index.html
-``` html
+
+```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gnet</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="container"></div>
-</body>
-<script src="gnet.min.js"></script>
-<script src="main.js"></script>
+  </body>
+  <script src="gnet.min.js"></script>
+  <script src="main.js"></script>
 </html>
 ```
+
 #### main.js
+
 ```JavaScript
 function main(){
     const data = {
@@ -64,8 +69,8 @@ function main(){
 main();
 
 ```
-that's it, simple right :sunglasses:
 
+that's it, simple right :sunglasses:
 
 ## Build
 
@@ -81,6 +86,7 @@ To install all the dependencies and build the library, run following commands in
 $ cd gnet.js
 $ npm install
 ```
+
 Then, the project can be build running:
 
 ```
@@ -91,7 +97,7 @@ $ npm run build
 
 Contributions to the **Gnet.js** is are very welcome!.
 
-[1]:https://github.com/gouthams96
-[2]:https://d3js.org/
-[3]:https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
-[4]:https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
+[1]: https://github.com/gouthams96
+[2]: https://d3js.org/
+[3]: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
+[4]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
