@@ -55,13 +55,17 @@ function main(){
             value  : 1
         }]
     };
-    const graph = new Gnet('#container',{
-        width : '500',
-        height : '500',
-        nodeStyle : {
-            radius : 5,
-            color  : '#48C9B0',
-        }
+   const graph = new Gnet("#container", {
+        width: "500",
+        height: "500",
+        nodeStyle: {
+            radius: 5,
+            color: "#48C9B0",
+            borderColor: "#fff",
+        },
+        linkStyle: {
+            color: "#aaa",
+        },
     });
     graph.addData(data);
     graph.run();
