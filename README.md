@@ -45,16 +45,30 @@ A basic example of loading the network graph is shown below using **Gnet**.
 ```JavaScript
 function main(){
     const data = {
-        nodes : [
-            {id: "A", group: 1},
-            {id: "B", group: 2}
-        ],
-        links :  [{
-            source : "A",
-            target : "B",
-            value  : 1
-        }]
-    };
+        nodes: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }],
+        links: [
+            {
+                source: 1,
+                target: 2,
+            },
+            {
+                source: 2,
+                target: 3,
+            },
+            {
+                source: 3,
+                target: 4,
+            },
+            {
+                source: 4,
+                target: 2,
+            },
+            {
+                source: 3,
+                target: 5,
+            },
+    ],
+  };
    const graph = new Gnet("#container", {
         width: "500",
         height: "500",
@@ -65,6 +79,9 @@ function main(){
         },
         linkStyle: {
             color: "#aaa",
+        },
+        complete: (d) => {
+            console.log(d);
         },
     });
     graph.addData(data);

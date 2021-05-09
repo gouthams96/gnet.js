@@ -23,6 +23,7 @@ export class Gnet {
   linkStyle: LinkStyle = {
     color: "#aaa",
   };
+  complete: any;
 
   canvasContext: CanvasRenderingContext2D;
 
@@ -33,7 +34,7 @@ export class Gnet {
 
     this.nodeStyle = { ...this.nodeStyle, ...options.nodeStyle };
     this.linkStyle = { ...this.linkStyle, ...options.linkStyle };
-
+    this.complete = options.complete;
     this.init();
   }
 
@@ -58,7 +59,10 @@ export class Gnet {
       )
       .force("charge", forceManyBody())
       .force("center", forceCenter(this.width / 2, this.height / 2))
-      .on("tick", () => this.ticked());
+      .on("tick", () => this.ticked())
+      .on("end", () => {
+        this.complete && this.complete("completed");
+      });
   }
 
   ticked() {

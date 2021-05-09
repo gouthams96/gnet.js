@@ -3,6 +3,7 @@ export interface GraphOptions {
   height: number;
   nodeStyle: NodeStyle;
   linkStyle: LinkStyle;
+  complete(status: string): any;
 }
 
 export interface NodeStyle {
